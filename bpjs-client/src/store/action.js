@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import axios from 'axios'
 
 const initialState = {
   profileCode: '',
@@ -20,9 +19,28 @@ const initialState = {
   },
   photo: {},
   workingExperience: {},
-  employment: {},
-  education: {},
-  skill: {}
+  employment: {
+    jobTitle: '',
+    employer: '',
+    startDate: '',
+    endDate: '',
+    city: '',
+    description: ''
+  },
+  education: {
+    school: '',
+    degree: '',
+    startDate: '',
+    endDate: '',
+    city: '',
+    description: ''
+  },
+  skill: {
+    skill: '',
+    level: ''
+  },
+  employments: [],
+  educations: []
 }
 
 export const actionSlice = createSlice({
@@ -49,6 +67,12 @@ export const actionSlice = createSlice({
     },
     setSkill: (state, action) => {
       state.skill = action.payload
+    },
+    setEmployments: (state, action) => {
+      state.employments = action.payload
+    },
+    setEducations: (state, action) => {
+      state.educations = action.payload
     }
   }
 })
@@ -60,7 +84,9 @@ export const {
   setWorkingExperience,
   setEmployment,
   setEducation,
-  setSkill
+  setSkill,
+  setEmployments,
+  setEducations
 } = actionSlice.actions
 
 export default actionSlice.reducer

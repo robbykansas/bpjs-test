@@ -6,9 +6,7 @@ import { setProfile, setPhoto } from '../store/action'
 
 const AddProfileForm = () => {
   const dispatch = useDispatch()
-  const { photo } = useSelector((state) => state.action)
   const { profile } = useSelector((state) => state.action)
-  const { workingExperience } = useSelector((state) => state.action)
 
   const [image, setImage] = useState('')
 
@@ -48,13 +46,6 @@ const AddProfileForm = () => {
   const handleInput = (e) => {
     const { name, value } = e.target
     dispatch(setProfile({ ...profile, [name]: value }))
-  }
-
-  const addProfile = async (e) => {
-    e.preventDefault()
-    console.log(profile)  
-    console.log(photo, '<<<<<<< photo')
-    console.log(workingExperience, '<<<< working experience')
   }
 
   return (

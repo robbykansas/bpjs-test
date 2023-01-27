@@ -15,11 +15,8 @@ const AddProfessionalForm = () => {
   }
 
   const placeholder = 'e.g Passionate science teacher with 8+ years of experience and a track record of ...'
-
   const formats = ['bold', 'italic', 'underline', 'strike', 'list', 'link']
-
   const { quillRef, quill } = useQuill({ modules, placeholder, formats })
-
   useEffect(() => {
     if (quill) {
       quill.on('text-change', () => {

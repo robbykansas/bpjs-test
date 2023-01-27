@@ -14,7 +14,7 @@ class ProfileService {
   async getProfile(profileCode) {
     let result = await this.repositories.getProfile(profileCode)
     result = {
-      profileCode: result.profileCode,
+      profileCode: profileCode,
       ...result.profile
     }
   
@@ -23,7 +23,7 @@ class ProfileService {
 
   async updateProfile(profile) {
     const result = await this.repositories.updateProfile(profile)
-    console.log(result, '<<<<< result')
+
     return result
   }
 
